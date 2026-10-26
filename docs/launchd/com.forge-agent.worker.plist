@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.forge-agent.worker</string>
+
+  <key>WorkingDirectory</key>
+  <string>/ABSOLUTE/PATH/TO/forge-agent</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/ABSOLUTE/PATH/TO/pnpm</string>
+    <string>worker</string>
+  </array>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>FORGE_DATABASE_PATH</key>
+    <string>/ABSOLUTE/PATH/TO/forge-agent/forge-agent.sqlite</string>
+    <key>FORGE_WORKSPACE_ROOT</key>
+    <string>/ABSOLUTE/PATH/TO/ForgeWorkspaces</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/ABSOLUTE/PATH/TO/forge-agent/artifacts/worker.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/ABSOLUTE/PATH/TO/forge-agent/artifacts/worker.err.log</string>
+</dict>
+</plist>

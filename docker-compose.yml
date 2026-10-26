@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    image: node:24-bookworm
+    working_dir: /workspace
+    command: sh -lc "corepack enable && pnpm install && pnpm dashboard"
+    ports:
+      - "3099:3099"
+    volumes:
+      - .:/workspace
+    environment:
+      FORGE_DATABASE_PATH: /workspace/forge-agent.sqlite
+      FORGE_WORKSPACE_ROOT: /workspace/workspaces
+
+  worker:
+    image: node:24-bookworm
+    working_dir: /workspace
+    command: sh -lc "corepack enable && pnpm install && pnpm worker"
+    volumes:
+      - .:/workspace
+    environment:
+      FORGE_DATABASE_PATH: /workspace/forge-agent.sqlite
+      FORGE_WORKSPACE_ROOT: /workspace/workspaces

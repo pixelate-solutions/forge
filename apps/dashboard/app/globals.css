@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 210 24% 10%;
+  --panel: 0 0% 100%;
+  --muted: 214 20% 94%;
+  --border: 214 18% 84%;
+  --accent: 189 72% 36%;
+  --danger: 354 72% 45%;
+  --success: 150 64% 32%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 210 18% 9%;
+    --foreground: 210 24% 96%;
+    --panel: 210 18% 13%;
+    --muted: 210 15% 18%;
+    --border: 210 13% 25%;
+    --accent: 189 72% 42%;
+    --danger: 354 66% 56%;
+    --success: 150 58% 46%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.status-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@forge/visual-qa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./screenshotReviewer": "./src/screenshotReviewer.ts"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts",
+    "visual-qa": "tsx src/cli.ts"
+  },
+  "dependencies": {
+    "@forge/core": "workspace:*",
+    "playwright": "^1.54.1"
+  }
+}
